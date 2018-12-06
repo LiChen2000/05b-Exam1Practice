@@ -154,17 +154,21 @@ def problem3a(window, point, n):
     #    DIFFICULTY:      7 or 8
     #    TIME ESTIMATE:   20 to 35 minutes.
     # -------------------------------------------------------------------------
-    total = 1
-    for k in range(n+1):
+    total = 0
+    for k in range(n):
         startpoint = rg.Point(point.x + 20*k, point.y + 10*k)
-        endpoint = rg.Point(point.x + 20*k, point.y + k*10+20)
+        endpoint = rg.Point(point.x + 20*k, point.y + k*10+50)
         line = rg.Line(startpoint, endpoint)
 
-        if k < 13:
+        if k < 7:
             line.thickness = 1 + 2 * k
-
+        else:
+            line.thickness = 13
+        total = total + line.thickness
         line.attach_to(window)
-        window.render()
+    window.render()
+    return total
+
 
 
 
