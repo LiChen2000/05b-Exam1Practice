@@ -96,6 +96,14 @@ def run_test_problem3a():
     print('Test 4 expected:', expected)
     print('       actual:  ', answer)
 
+
+    # Test 5 (it is on window 3):
+    point = rg.Point(50, 50)
+    expected = 218
+    answer = problem3a(window3, point, 20)
+    print()
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
     window3.close_on_mouse_click()
 
     # -------------------------------------------------------------------------
@@ -146,6 +154,7 @@ def problem3a(window, point, n):
     #    DIFFICULTY:      7 or 8
     #    TIME ESTIMATE:   20 to 35 minutes.
     # -------------------------------------------------------------------------
+    total = 1
     for k in range(n+1):
         startpoint = rg.Point(point.x + 20*k, point.y + 10*k)
         endpoint = rg.Point(point.x + 20*k, point.y + k*10+20)
@@ -154,10 +163,17 @@ def problem3a(window, point, n):
         if k < 13:
             line.thickness = 1 + 2 * k
 
-
-
         line.attach_to(window)
         window.render()
+
+
+
+
+
+
+
+
+
 
 
 
@@ -239,6 +255,7 @@ def problem3b(m, point1):
     #    DIFFICULTY:      8 or 9
     #    TIME ESTIMATE:   20 to 30 minutes.
     # -------------------------------------------------------------------------
+    window = rg.Window(400, 650)
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
